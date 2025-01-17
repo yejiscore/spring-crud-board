@@ -34,21 +34,22 @@
     </tr>
     <tr th:if="${board.fileAttached == 1}">
         <th>image</th>
-        <td><img th:src="@{|/upload/${board.storedFileName}|}" alt=""></td>
+        <!-- 파일이 여러 개이므로 반복문 th:each 사용 -->
+        <td th:each="fileName: ${board.storedFileName}"><img th:src="@{|/upload/${fileName}|}" alt=""></td>
     </tr>
 </table>
 <button onclick="listReq()">목록</button>
 <button onclick="updateReq()">수정</button>
 <button onclick="deleteReq()">삭제</button>
 
-<!-- 댓글 작성 부분 -->
+<!-- 댓글 작성 -->
 <div id="comment-write">
     <input type="text" id="commentWriter" placeholder="작성자">
     <input type="text" id="commentContents" placeholder="내용">
     <button id="comment-write-btn" onclick="commentWrite()">댓글 작성</button>
 </div>
 
-<!-- 댓글 출력 부분 -->
+<!-- 댓글 출력 -->
 <div id="comment-list">
     <table>
         <tr>

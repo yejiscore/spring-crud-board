@@ -8,6 +8,7 @@
 - 글 수정
 - 글 삭제
 - 페이징
+- 이미지(파일) 첨부
 
 ## 개발환경
 - IDE: IntelliJ IDEA Community
